@@ -1,9 +1,10 @@
-import './App.css';
+import './App.scss';
+import Layout from './Components/Layout';
 
 function App() {
   return (
-    <div className="App">
-      <h1>portfolio</h1>
+    <div>
+      <Layout />
     </div>
   );
 }
