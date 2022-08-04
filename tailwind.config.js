@@ -9,7 +9,15 @@ module.exports = {
       orange: '#f77f00',
       yellow: '#fcbf49',
     },
-    extend: {},
+    fontFamily: {
+      nunito: ['Nunito', 'sans-serif'],
+      roboto: ['Roboto', 'serif'],
+    },
+    extend: {
+      backgroundImage: {
+        // home: "url('/src/Assets/roman-synkevych-vXInUOv1n84-unsplash.jpg')",
+      },
+    },
   },
   plugins: [],
 };
