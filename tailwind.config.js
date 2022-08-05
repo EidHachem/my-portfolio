@@ -5,17 +5,19 @@ module.exports = {
     colors: {
       beige: '#eae2b7',
       blue: '#003049',
+      lightBlue: '#b7bfea',
       purple: '#5f0f40',
       orange: '#f77f00',
       yellow: '#fcbf49',
     },
     fontFamily: {
       nunito: ['Nunito', 'sans-serif'],
-      roboto: ['Roboto', 'serif'],
+      roboto: ['Roboto', 'sans-serif'],
+      handlee: ['Handlee', 'cursive'],
     },
     extend: {
       backgroundImage: {
-        // home: "url('/src/Assets/roman-synkevych-vXInUOv1n84-unsplash.jpg')",
+        // logo: "url('/src/Assets/EH.png')",
       },
     },
   },

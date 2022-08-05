@@ -9,7 +9,7 @@ const Home = () => {
         className="h-52 w-52 rounded-full"
       />
       <h3 className="text-4xl font-medium">Hello I'm</h3>
-      <h1 className="text-7xl font-semibold text-purple">Eid Hachem</h1>
+      <h1 className="text-7xl font-semibold font-handlee text-blue">Eid Hachem</h1>
       <p className="max-w-screen-md">
         I am A Blogger Far far away, behind the word mountains, far from the countries Vokalia and
         Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the
