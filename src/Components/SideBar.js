@@ -4,6 +4,7 @@ import { CgWebsite } from 'react-icons/cg';
 import { TbMessageCircle } from 'react-icons/tb';
 import Carousel from 'nuka-carousel/lib/carousel';
 import logo from '../Assets/EH.png';
+import Socials from './Socials';
 
 const SideBar = () => {
   return (
@@ -61,28 +62,7 @@ const SideBar = () => {
           Copyright &copy;2022 All rights reserved <br /> made with &#10084; by Eid hachem
         </p>
       </div>
-      <ul className="flex justify-center align-middle gap-4">
-        <li>
-          <a href="https://github.com/EidHachem" target="_blank" rel="noreferrer">
-            <FaGithub className="h-6 w-6" />
-          </a>
-        </li>
-        <li>
-          <a href="https://angel.co/u/eid-hachem" target="_blank" rel="noreferrer">
-            <FaAngellist className="h-6 w-6" />
-          </a>
-        </li>
-        <li>
-          <a href="https://www.linkedin.com/in/eid-hachem/" target="_blank" rel="noreferrer">
-            <FaLinkedin className="h-6 w-6" />
-          </a>
-        </li>
-        <li>
-          <a href="https://twitter.com/eidHachem1" target="_blank" rel="noreferrer">
-            <FaTwitter className="h-6 w-6" />
-          </a>
-        </li>
-      </ul>
+      <Socials />
     </div>
   );
 };
