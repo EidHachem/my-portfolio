@@ -1,6 +1,5 @@
 import React from 'react';
 import { FaGithub, FaAngellist, FaLinkedin, FaTwitter, FaHome, FaBookOpen } from 'react-icons/fa';
-import { SiAboutdotme } from 'react-icons/si';
 import { CgWebsite } from 'react-icons/cg';
 import { TbMessageCircle } from 'react-icons/tb';
 import Carousel from 'nuka-carousel/lib/carousel';
@@ -8,7 +7,7 @@ import logo from '../Assets/EH.png';
 
 const SideBar = () => {
   return (
-    <div className="h-[100vh] w-[25vw] flex-col justify-around items-center text-center font-roboto bg-purple text-beige fixed hidden md:flex">
+    <div className="h-[100vh] w-[20%] flex-col justify-around items-center text-center font-roboto bg-purple text-beige fixed hidden md:flex">
       <img className="h-32 w-32 rounded-full" src={logo} alt="logo"></img>
       {/* <p className="text-4xl">Eid Hachem</p> */}
 
@@ -16,10 +15,6 @@ const SideBar = () => {
         <div className="flex justify-center items-center gap-9">
           <FaHome />
           <p className="text-lg font-bold">Home</p>
-        </div>
-        <div className="flex justify-center items-center gap-9">
-          <SiAboutdotme />
-          <p className="text-lg font-bold">About</p>
         </div>
         <div className="flex justify-center items-center gap-9">
           <CgWebsite />
@@ -68,22 +63,22 @@ const SideBar = () => {
       </div>
       <ul className="flex justify-center align-middle gap-4">
         <li>
-          <a href="https://github.com/EidHachem">
+          <a href="https://github.com/EidHachem" target="_blank" rel="noreferrer">
             <FaGithub className="h-6 w-6" />
           </a>
         </li>
         <li>
-          <a href="https://angel.co/u/eid-hachem">
+          <a href="https://angel.co/u/eid-hachem" target="_blank" rel="noreferrer">
             <FaAngellist className="h-6 w-6" />
           </a>
         </li>
         <li>
-          <a href="https://www.linkedin.com/in/eid-hachem/">
+          <a href="https://www.linkedin.com/in/eid-hachem/" target="_blank" rel="noreferrer">
             <FaLinkedin className="h-6 w-6" />
           </a>
         </li>
         <li>
-          <a href="https://twitter.com/eidHachem1">
+          <a href="https://twitter.com/eidHachem1" target="_blank" rel="noreferrer">
             <FaTwitter className="h-6 w-6" />
           </a>
         </li>
