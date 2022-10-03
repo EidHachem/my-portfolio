@@ -11,9 +11,12 @@ const Home = () => {
       <h3 className="text-4xl font-medium">Hello I'm</h3>
       <h1 className="text-7xl font-semibold font-handlee text-blue">Eid Hachem</h1>
       <p className="max-w-screen-md">
-        I am A Blogger Far far away, behind the word mountains, far from the countries Vokalia and
-        Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the
-        coast of the Semantics, a large language ocean.
+        Let me tell you few things about me... I'm a business school graduate, I found my passion
+        into programming the first time I was introduced to Java in an elective university class,
+        After a while I started self-studying web development, and joined Microverse bootcamp to
+        learn more about the field in a pair programming way that they offered. Now I am a
+        full-stack web developer who is ready to start a new career that's filled with passion and
+        opportunities.
       </p>
     </div>
   );
