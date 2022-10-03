@@ -9,6 +9,8 @@ module.exports = {
       purple: '#5f0f40',
       orange: '#f77f00',
       yellow: '#fcbf49',
+      red: '#e53e3e',
+      lightblue: '#2b6cb0',
     },
     fontFamily: {
       nunito: ['Nunito', 'sans-serif'],

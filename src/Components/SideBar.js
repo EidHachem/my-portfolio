@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaGithub, FaAngellist, FaLinkedin, FaTwitter, FaHome, FaBookOpen } from 'react-icons/fa';
+import { FaHome, FaBookOpen } from 'react-icons/fa';
 import { CgWebsite } from 'react-icons/cg';
 import { TbMessageCircle } from 'react-icons/tb';
 import Carousel from 'nuka-carousel/lib/carousel';
