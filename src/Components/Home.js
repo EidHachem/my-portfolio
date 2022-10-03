@@ -11,6 +11,8 @@ import {
 import Socials from './Socials';
 
 const Home = () => {
+  const style = 'w-[50px] h-[50px] animate-pulse hover:animate-none';
+
   return (
     <div className="h-[100vh] w-[100%]  flex flex-col justify-center items-center gap-8 text-center">
       <img
@@ -30,18 +32,18 @@ const Home = () => {
       </p>
       <Socials />
       <div className="flex justify-center items-center gap-6">
-        <FaHtml5 className="text-orange w-[50px] h-[50px] animate-pulse" />
-        <FaCss3 className="text-lightblue w-[50px] h-[50px] animate-pulse" />
-        <FaJs className="text-yellow w-[50px] h-[50px] animate-pulse" />
-        <FaReact className="text-lightblue w-[50px] h-[50px] animate-pulse" />
-        <SiRedux className="text-lightblue w-[50px] h-[50px] animate-pulse" />
-        <SiRuby className="text-red w-[50px] h-[50px] animate-pulse" />
-        <SiRubyonrails className="text-red w-[50px] h-[50px] animate-pulse" />
-        <SiPostgresql className="text-lightblue w-[50px] h-[50px] animate-pulse" />
-        <SiMysql className="text-lightblue w-[50px] h-[50px] animate-pulse" />
-        <FaSass className="text-red w-[50px] h-[50px] animate-pulse" />
-        <FaBootstrap className="text-purple w-[50px] h-[50px] animate-pulse" />
-        <SiTypescript className="text-lightblue w-[50px] h-[50px] animate-pulse" />
+        <FaHtml5 className={`text-orange ${style}`} title="HTML" />
+        <FaCss3 className={`text-lightblue ${style}`} title="CSS" />
+        <FaJs className={`text-yellow ${style}`} title="JavaScript" />
+        <FaReact className={`text-lightblue ${style}`} title="React" />
+        <SiRedux className={`text-lightblue ${style}`} title="Redux" />
+        <SiRuby className={`text-red ${style}`} title="Ruby" />
+        <SiRubyonrails className={`text-red ${style}`} title="Rails" />
+        <SiPostgresql className={`text-lightblue ${style}`} title="Postgresql" />
+        <SiMysql className={`text-lightblue ${style}`} title="Mysql" />
+        <FaSass className={`text-red ${style}`} title="Sass" />
+        <FaBootstrap className={`text-purple ${style}`} title="Bootstrap" />
+        <SiTypescript className={`text-lightblue ${style}`} title="TypeScript" />
       </div>
     </div>
   );
