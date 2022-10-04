@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="flex font-nunito">
       <SideBar />
-      <div className="w-[100%] absolute left-40">
+      <div className="w-[80%] absolute left-[20%]">
         <Home />
         <Projects />
       </div>
