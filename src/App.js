@@ -1,26 +1,14 @@
 import Home from './Components/Home';
+import Projects from './Components/Projects';
 import SideBar from './Components/SideBar';
 
 function App() {
   return (
-    <div className="flex bg-beige font-nunito">
+    <div className="flex font-nunito">
       <SideBar />
-      <div className="md:pl-[25vw] w-[100%]">
+      <div className="w-[100%] absolute left-40">
         <Home />
-        <div className="h-14 pb-28">n</div>
-        <div className="h-14 pb-80">n</div>
-        <div className="h-14 pb-28">n</div>
-        <div className="h-14 pb-28">n</div>
-        <div>n</div>
-        <div>n</div>
-        <div>n</div>
-        <div>n</div>
-        <div>n</div>
-        <div>n</div>
-        <div>n</div>
-        <div>n</div>
-        <div>n</div>
-        <div>n</div>
+        <Projects />
       </div>
     </div>
   );
