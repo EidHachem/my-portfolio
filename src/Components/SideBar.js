@@ -8,7 +8,7 @@ import Socials from './Socials';
 
 const SideBar = () => {
   return (
-    <div className="h-[100vh] w-[20%] flex-col justify-around items-center text-center font-roboto bg-purple text-beige fixed hidden md:flex">
+    <div className="h-[100vh] w-[20%] flex-col justify-around items-center text-center font-roboto bg-purple text-beige fixed hidden md:flex z-30">
       <img className="h-32 w-32 rounded-full" src={logo} alt="logo"></img>
       {/* <p className="text-4xl">Eid Hachem</p> */}
 
