@@ -16,7 +16,7 @@ const Articles = () => {
           blogs.map((blog) => (
             <div
               className="max-w-md rounded overflow-hidden shadow-lg bg-opacity-40 border-spacing-6 border-blue border-2 bg-beige h-[31em]"
-              key={blog.id}>
+              key={blog.title}>
               <h3 className="font-bold text-xl mb-2 text-center mt-2">{blog.title}</h3>
               <div
                 className="overflow-hidden mb-6 p-2"
