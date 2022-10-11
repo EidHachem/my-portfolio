@@ -1,10 +1,13 @@
 import { collection, getDocs, orderBy, query } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react';
 import { db } from '../firebase/firebase.config';
+import ProjectModal from '../Modal/ProjectModal';
 
 const Projects = () => {
   const projectsCollection = collection(db, 'projects');
+  const [projects, setProjects] = useState();
   const [project, setProject] = useState();
+  const [openModal, setOpenModal] = useState(false);
 
   useEffect(() => {
     const getUsers = async () => {
@@ -13,7 +16,7 @@ const Projects = () => {
       data.docs.forEach((doc) => {
         projects.push({ ...doc.data(), id: doc.id });
       });
-      setProject(projects);
+      setProjects(projects);
     };
 
     getUsers();
@@ -25,8 +28,8 @@ const Projects = () => {
         Projects
       </h2>
       <div className="flex flex-wrap justify-center items-center gap-y-20 gap-x-20">
-        {project &&
-          project.map((project) => (
+        {projects &&
+          projects.map((project) => (
             <div
               key={project.id}
               className="max-w-md rounded overflow-hidden shadow-lg bg-opacity-40 border-spacing-6 border-blue border-2 bg-gainsboro h-[31em]">
@@ -45,13 +48,27 @@ const Projects = () => {
                 <div className="flex justify-center">
                   <button
                     type="button"
-                    className="bg-blue text-beige text-center p-2 rounded mb-3 mt-3">
+                    className="bg-blue text-beige text-center p-2 rounded mb-3 mt-3"
+                    onClick={() => {
+                      setOpenModal(true);
+                      setProject(project);
+                      document.body.style.overflow = 'hidden';
+                    }}>
                     See More
                   </button>
                 </div>
               </div>
             </div>
           ))}
+        {openModal && (
+          <ProjectModal
+            data={project}
+            close={() => {
+              setOpenModal(false);
+              document.body.style.overflow = 'visible';
+            }}
+          />
+        )}
       </div>
     </div>
   );
