@@ -14,7 +14,7 @@ const Home = () => {
   const style = 'w-[50px] h-[50px] animate-pulse hover:animate-none';
 
   return (
-    <div className="h-[100vh] w-[100%] flex flex-col justify-center items-center gap-8 text-center bg-beige">
+    <div className="h-[100vh] w-[100%] flex flex-col justify-center items-center gap-8 text-center bg-gainsboro">
       <img
         src="https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg"
         alt="Eid"
