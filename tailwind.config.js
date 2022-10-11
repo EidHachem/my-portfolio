@@ -4,8 +4,9 @@ module.exports = {
   theme: {
     colors: {
       beige: '#eae2b7',
+      gainsboro: '#dcdcdc',
       blue: '#003049',
-      lightBlue: '#b7bfea',
+      lightBlue: '#EAE7DC',
       purple: '#5f0f40',
       orange: '#f77f00',
       yellow: '#fdd17b',
