@@ -12,6 +12,8 @@ module.exports = {
       yellow: '#fdd17b',
       red: '#e53e3e',
       lightblue: '#2b6cb0',
+      lightGray: '#f7fafc',
+      gray: '#edf2f7',
     },
     fontFamily: {
       nunito: ['Nunito', 'sans-serif'],
