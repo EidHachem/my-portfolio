@@ -1,12 +1,26 @@
 import React, { useContext, useState } from 'react';
 import { ProjectsContext } from '../App';
 import ProjectModal from '../Modal/ProjectModal';
+import { InfinitySpin } from 'react-loader-spinner';
 
 const Projects = () => {
   const [project, setProject] = useState();
   const [openModal, setOpenModal] = useState(false);
   const projects = useContext(ProjectsContext);
   const [pages, setPages] = useState(4);
+
+  if (!projects) {
+    return (
+      <div className="w-[100%] min-h-[100vh] bg-lightBlue py-5 px-5 lg:px-0">
+        <h2 className="text-center pt-20 mb-20 text-purple font-extrabold text-4xl font-handlee lg:text-7xl">
+          Projects
+        </h2>
+        <div className="flex justify-center items-center">
+          <InfinitySpin width="200" color="#003049" />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div id="projects" className="w-[100%] min-h-[100vh] bg-lightBlue py-5 px-5 lg:px-0">

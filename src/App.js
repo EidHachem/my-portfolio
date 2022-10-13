@@ -7,12 +7,14 @@ import MobileMenu from './Components/MobileMenu';
 import Projects from './Components/Projects';
 import SideBar from './Components/SideBar';
 import { db } from './firebase/firebase.config';
+import { Bars } from 'react-loader-spinner';
 
 export const ProjectsContext = createContext();
 
 function App() {
   const projectsCollection = collection(db, 'projects');
   const [projects, setProjects] = useState();
+  const [loader, setLoader] = useState(true);
 
   useEffect(() => {
     const getUsers = async () => {
@@ -25,7 +27,31 @@ function App() {
     };
 
     getUsers();
-  }, []);
+  });
+
+  useEffect(() => {
+    if (loader) {
+      setTimeout(() => {
+        setLoader(false);
+      }, 2000);
+    }
+  }, [loader]);
+
+  if (loader) {
+    return (
+      <div className="flex justify-center items-center bg-lightBlue min-h-[100vh]">
+        <Bars
+          height="80"
+          width="80"
+          color="#003049"
+          ariaLabel="bars-loading"
+          wrapperStyle={{}}
+          wrapperClass=""
+          visible={true}
+        />
+      </div>
+    );
+  }
 
   return (
     <ProjectsContext.Provider value={projects}>

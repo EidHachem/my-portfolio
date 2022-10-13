@@ -9,8 +9,7 @@ const SideBar = () => {
   const projects = useContext(ProjectsContext);
   return (
     <div className="h-[100vh] w-[20%] flex-col justify-around items-center text-center font-roboto bg-blue text-beige fixed hidden md:flex z-30">
-      <img className="h-32 w-32 rounded-full" src={logo} alt="logo"></img>
-      {/* <p className="text-4xl">Eid Hachem</p> */}
+      <img className="h-32 w-32 rounded-full hover:scale-150" src={logo} alt="logo"></img>
       <MenuTabs />
       <div>
         <p className="text-lg font-bold mb-4">Featured</p>

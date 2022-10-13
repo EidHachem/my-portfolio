@@ -2,11 +2,20 @@ import React, { useContext, useState } from 'react';
 import Carousel from 'nuka-carousel/lib/carousel';
 import { ProjectsContext } from '../App';
 import ProjectModal from '../Modal/ProjectModal';
+import { InfinitySpin } from 'react-loader-spinner';
 
 const FeaturedCarousel = () => {
   const projects = useContext(ProjectsContext);
   const [openModal, setOpenModal] = useState(false);
   const [project, setProject] = useState();
+
+  if (!projects) {
+    return (
+      <div className="flex justify-center items-center">
+        <InfinitySpin width="200" color="#eae2b7" />
+      </div>
+    );
+  }
 
   return (
     <div>
