@@ -11,7 +11,7 @@ const Projects = () => {
 
   if (!projects) {
     return (
-      <div className="w-[100%] min-h-[100vh] bg-lightBlue py-5 px-5 lg:px-0">
+      <div className="w-[100%] min-h-[100vh] bg-gainsboro py-5 px-5 lg:px-0">
         <h2 className="text-center pt-20 mb-20 text-purple font-extrabold text-4xl font-handlee lg:text-7xl">
           Projects
         </h2>
@@ -23,7 +23,9 @@ const Projects = () => {
   }
 
   return (
-    <div id="projects" className="w-[100%] min-h-[100vh] bg-lightBlue py-5 px-5 lg:px-0">
+    <div
+      id="projects"
+      className="w-[100%] min-h-[100vh] bg-gainsboro py-5 px-5 lg:px-0 border-b-[1px] border-blue">
       <h2 className="text-center pt-20 mb-20 text-purple font-extrabold text-4xl font-handlee lg:text-7xl">
         Projects
       </h2>
@@ -32,7 +34,7 @@ const Projects = () => {
           projects.slice(0, pages).map((project) => (
             <div
               key={project.id}
-              className="max-w-md rounded overflow-hidden shadow-lg bg-opacity-40 border-spacing-6 border-blue border-2 bg-gainsboro h-[31em]">
+              className="max-w-md rounded overflow-hidden shadow-lg bg-opacity-40 border-spacing-6 border-blue border-2 bg-lightGray h-[31em]">
               <img src={project.images[0]} alt={project.name} className="w-max h-64" />
               <div className="p-3">
                 <h3 className="font-bold text-xl mb-2 text-center mt-2">{project.name}</h3>

@@ -16,7 +16,7 @@ const Home = () => {
   return (
     <div
       id="home"
-      className="min-h-[100vh] w-[100%] flex flex-col justify-center items-center gap-8 text-center bg-gainsboro px-7 lg:px-0">
+      className="min-h-[100vh] w-[100%] flex flex-col justify-center items-center gap-8 text-center bg-gainsboro px-7 lg:px-0 border-b-[1px] border-blue">
       <img
         src="https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg"
         alt="Eid"
@@ -32,7 +32,7 @@ const Home = () => {
         in a pair programming way that they offered. Now I am a full-stack web developer who is
         ready to start a new career that's filled with passion and opportunities.
       </p>
-      <Socials />
+      <Socials blue="blue" lightBlue="lightblue" gray="gray" tweet="twitterBlue" />
       <div className="flex justify-center items-center gap-6 flex-wrap max-w-[20em] lg:max-w-full">
         <FaHtml5
           className={`text-orange w-[30px] h-[30px] lg:w-[50px] lg:h-[50px] ${style}`}

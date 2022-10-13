@@ -14,6 +14,7 @@ module.exports = {
       lightblue: '#2b6cb0',
       lightGray: '#f7fafc',
       gray: '#edf2f7',
+      twitterBlue: '#00acee',
     },
     fontFamily: {
       nunito: ['Nunito', 'sans-serif'],

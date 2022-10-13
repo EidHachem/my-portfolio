@@ -57,7 +57,7 @@ const Contact = () => {
   }, [refresh]);
 
   return (
-    <div id="contact" className="bg-lightBlue min-h-[100vh] w-[100%] px-5 py-2 lg:px-0">
+    <div id="contact" className="bg-gainsboro min-h-[100vh] w-[100%] px-5 py-2 lg:px-0">
       <h2 className="text-center pt-20 mb-10 text-blue font-extrabold text-4xl lg:text-7xl font-handlee">
         Contact Me
       </h2>
@@ -90,7 +90,7 @@ const Contact = () => {
             value={senderName}
             onChange={handleName}
             placeholder="Name*"
-            className="w-[90%] lg:w-1/2 h-10 rounded-md border-2 border-blue p-4 accent-blue"
+            className="w-[90%] lg:w-1/2 h-10 rounded-md border-2 border-blue p-4 accent-blue bg-lightGray"
           />
           <input
             type="text"
@@ -98,21 +98,21 @@ const Contact = () => {
             value={senderEmail}
             onChange={handleEmail}
             placeholder="Email*"
-            className="w-[90%] lg:w-1/2 h-10 rounded-md border-2 border-blue p-4 accent-blue"
+            className="w-[90%] lg:w-1/2 h-10 rounded-md border-2 border-blue p-4 accent-blue bg-lightGray"
           />
           <textarea
             name="message"
             value={message}
             onChange={handleMessage}
             placeholder="Message*"
-            className="w-[90%] lg:w-1/2 h-40 rounded-md border-2 border-blue resize-none p-4 accent-blue"
+            className="w-[90%] lg:w-1/2 h-40 rounded-md border-2 border-blue resize-none p-4 accent-blue bg-lightGray"
           />
           <button type="submit" className="bg-blue p-2 px-4 rounded text-beige">
             Send
           </button>
         </form>
       </div>
-      <figure className="mx-auto max-w-screen-md text-center mt-6 border-2 border-blue p-1 rounded bg-[#fff] lg:w-1/2">
+      <figure className="mx-auto max-w-screen-md text-center mt-6 border-2 border-blue p-1 w-[90%] rounded lg:w-1/2 bg-lightGray">
         <svg
           aria-hidden="true"
           className="mx-auto mb-3 w-8 h-8 text-orange"
@@ -124,13 +124,13 @@ const Contact = () => {
             fill="currentColor"
           />
         </svg>
-        <p>Quote:</p>
+        <p className="font-bold text-xl">Quote:</p>
         <blockquote>
           <p className="text-xl italic font-medium py-3 text-blue">{quote}</p>
         </blockquote>
         <figcaption className="flex justify-center items-center mt-3 space-x-3">
           <div className="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-            <cite className="pr-3 font-medium text-gray-900 dark:text-white">{author}</cite>
+            <cite className="pr-3 font-bold text-blue font-handlee">{author}</cite>
           </div>
         </figcaption>
         <button
