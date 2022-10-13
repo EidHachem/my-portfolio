@@ -6,15 +6,16 @@ const Projects = () => {
   const [project, setProject] = useState();
   const [openModal, setOpenModal] = useState(false);
   const projects = useContext(ProjectsContext);
+  const [pages, setPages] = useState(4);
 
   return (
     <div id="projects" className="w-[100%] min-h-[100vh] bg-lightBlue py-5 px-5 lg:px-0">
       <h2 className="text-center pt-20 mb-20 text-purple font-extrabold text-4xl font-handlee lg:text-7xl">
         Projects
       </h2>
-      <div className="flex flex-wrap justify-center items-center gap-y-20 gap-x-20">
+      <div className="flex flex-wrap justify-center items-center gap-y-10 gap-x-20 lg:gap-y-20">
         {projects &&
-          projects.slice(0, 4).map((project) => (
+          projects.slice(0, pages).map((project) => (
             <div
               key={project.id}
               className="max-w-md rounded overflow-hidden shadow-lg bg-opacity-40 border-spacing-6 border-blue border-2 bg-gainsboro h-[31em]">
@@ -57,6 +58,16 @@ const Projects = () => {
           />
         )}
       </div>
+      {projects.length < 4 && (
+        <div className="flex justify-center mt-4 lg:mt-24">
+          <button
+            type="button"
+            className="bg-blue text-beige text-center p-2 rounded"
+            onClick={() => projects.length > 4 && setPages(projects.length)}>
+            See More
+          </button>
+        </div>
+      )}
     </div>
   );
 };

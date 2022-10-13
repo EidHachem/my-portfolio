@@ -112,7 +112,7 @@ const Contact = () => {
           </button>
         </form>
       </div>
-      <figure className="mx-auto max-w-screen-md text-center mt-6 border border-blue p-1 rounded bg-[#fff]">
+      <figure className="mx-auto max-w-screen-md text-center mt-6 border-2 border-blue p-1 rounded bg-[#fff] lg:w-1/2">
         <svg
           aria-hidden="true"
           className="mx-auto mb-3 w-8 h-8 text-orange"
