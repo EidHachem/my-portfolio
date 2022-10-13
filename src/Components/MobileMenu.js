@@ -41,7 +41,7 @@ const MobileMenu = () => {
           />
         )}
       </div>
-      {isOpen && <MobileTabs />}
+      {isOpen && <MobileTabs close={closeMenu} />}
     </div>
   );
 };
