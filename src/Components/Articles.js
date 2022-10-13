@@ -7,8 +7,10 @@ const Articles = () => {
     fetchBlogs().then((blogs) => setBlogs(blogs));
   }, []);
   return (
-    <div id="articles" className="h-[100vh] w-[100%] text-center bg-gainsboro">
-      <h2 className="text-center pt-20 mb-20 text-blue font-extrabold text-6xl font-handlee">
+    <div
+      id="articles"
+      className="min-h-[100vh] w-[100%] py-5 px-5 text-center bg-gainsboro lg:px-0">
+      <h2 className="text-center pt-20 mb-20 text-blue font-extrabold text-4xl font-handlee lg:text-7xl">
         Articles
       </h2>
       <div className="flex flex-wrap justify-center items-center gap-y-20 gap-x-20">

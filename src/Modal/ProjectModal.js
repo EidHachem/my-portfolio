@@ -14,7 +14,9 @@ const ProjectModal = ({ data, close }) => {
           className="bg-orange text-yellow fixed right-[-25px] top-0 p-1 px-5 rotate-45 rounded">
           <span className="font-bold text-beige">Close</span>
         </button>
-        <h1 className="text-center font-handlee text-5xl font-bold text-purple">{name}</h1>
+        <h2 className="text-center font-handlee text-3xl lg:text-5xl font-bold text-purple">
+          {name}
+        </h2>
         <div className="w-[90%] m-auto">
           <Carousel
             wrapAround={true}

@@ -8,8 +8,8 @@ const Projects = () => {
   const projects = useContext(ProjectsContext);
 
   return (
-    <div id="projects" className="w-[100%] h-[100vh] bg-lightBlue py-5">
-      <h2 className="text-center pt-20 mb-20 text-purple font-extrabold text-6xl font-handlee">
+    <div id="projects" className="w-[100%] min-h-[100vh] bg-lightBlue py-5 px-5 lg:px-0">
+      <h2 className="text-center pt-20 mb-20 text-purple font-extrabold text-4xl font-handlee lg:text-7xl">
         Projects
       </h2>
       <div className="flex flex-wrap justify-center items-center gap-y-20 gap-x-20">
@@ -21,7 +21,9 @@ const Projects = () => {
               <img src={project.images[0]} alt={project.name} className="w-max h-64" />
               <div className="p-3">
                 <h3 className="font-bold text-xl mb-2 text-center mt-2">{project.name}</h3>
-                <p className="text-gray-700 text-center mb-2">{project.description}</p>
+                <p className="text-gray-700 text-center mb-2">
+                  {project.description.substring(0, 20)}
+                </p>
                 <p className="text-center mb-2 text-blue text-lg font-bold">Built with: </p>
                 <ul className="flex justify-center items-center gap-5">
                   {project.technologies.map((tech) => (
