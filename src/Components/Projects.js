@@ -1,29 +1,14 @@
-import { collection, getDocs, orderBy, query } from 'firebase/firestore';
-import React, { useEffect, useState } from 'react';
-import { db } from '../firebase/firebase.config';
+import React, { useContext, useState } from 'react';
+import { ProjectsContext } from '../App';
 import ProjectModal from '../Modal/ProjectModal';
 
 const Projects = () => {
-  const projectsCollection = collection(db, 'projects');
-  const [projects, setProjects] = useState();
   const [project, setProject] = useState();
   const [openModal, setOpenModal] = useState(false);
-
-  useEffect(() => {
-    const getUsers = async () => {
-      const data = await getDocs(query(projectsCollection, orderBy('createdAt', 'desc')));
-      let projects = [];
-      data.docs.forEach((doc) => {
-        projects.push({ ...doc.data(), id: doc.id });
-      });
-      setProjects(projects);
-    };
-
-    getUsers();
-  }, []);
+  const projects = useContext(ProjectsContext);
 
   return (
-    <div className="w-[100%] h-[100vh] bg-lightBlue py-5">
+    <div id="projects" className="w-[100%] h-[100vh] bg-lightBlue py-5">
       <h2 className="text-center pt-20 mb-20 text-purple font-extrabold text-6xl font-handlee">
         Projects
       </h2>
