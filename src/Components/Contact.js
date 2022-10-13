@@ -57,7 +57,7 @@ const Contact = () => {
   }, [refresh]);
 
   return (
-    <div id="contact" className="bg-lightBlue min-h-[100vh] w-[100%] px-5 lg:px-0">
+    <div id="contact" className="bg-lightBlue min-h-[100vh] w-[100%] px-5 py-2 lg:px-0">
       <h2 className="text-center pt-20 mb-10 text-blue font-extrabold text-4xl lg:text-7xl font-handlee">
         Contact Me
       </h2>
@@ -66,8 +66,8 @@ const Contact = () => {
         <a
           href={require('../Assets/My-Resume.docx')}
           download="Eid-Hachem-Resume.docx"
-          className="bg-blue text-beige rounded p-1 flex justify-start items_center">
-          <span>Download as</span>{' '}
+          className="bg-blue text-beige rounded p-1 flex justify-start items_center gap-2">
+          <span>Download word</span>{' '}
           <span className="text-center m-auto">
             <FaFileWord />
           </span>
@@ -75,8 +75,8 @@ const Contact = () => {
         <a
           href={require('../Assets/My-Resume.pdf')}
           download="Eid-Hachem-Resume.pdf"
-          className="bg-blue text-beige rounded p-1 flex justify-start items_center">
-          <span>Download as</span>{' '}
+          className="bg-blue text-beige rounded p-1 flex justify-start items_center gap-2">
+          <span>Download pdf</span>{' '}
           <span className="text-center m-auto">
             <FaFilePdf />
           </span>
@@ -112,7 +112,7 @@ const Contact = () => {
           </button>
         </form>
       </div>
-      <figure className="mx-auto max-w-screen-md text-center mt-6 border border-blue p-1 rounded">
+      <figure className="mx-auto max-w-screen-md text-center mt-6 border border-blue p-1 rounded bg-[#fff]">
         <svg
           aria-hidden="true"
           className="mx-auto mb-3 w-8 h-8 text-orange"
@@ -134,7 +134,7 @@ const Contact = () => {
           </div>
         </figcaption>
         <button
-          className="flex justify-center items-center bg-blue p-1 text-beige rounded m-auto"
+          className="flex justify-center items-center bg-blue p-1 my-2 text-beige rounded m-auto"
           onClick={() => setRefresh(!refresh)}>
           <span>
             <HiOutlineRefresh />

@@ -14,7 +14,7 @@ const Projects = () => {
       </h2>
       <div className="flex flex-wrap justify-center items-center gap-y-20 gap-x-20">
         {projects &&
-          projects.map((project) => (
+          projects.slice(0, 4).map((project) => (
             <div
               key={project.id}
               className="max-w-md rounded overflow-hidden shadow-lg bg-opacity-40 border-spacing-6 border-blue border-2 bg-gainsboro h-[31em]">
