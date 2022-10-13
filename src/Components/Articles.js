@@ -7,7 +7,7 @@ const Articles = () => {
     fetchBlogs().then((blogs) => setBlogs(blogs));
   }, []);
   return (
-    <div className="h-[100vh] w-[100%] text-center bg-gainsboro">
+    <div id="articles" className="h-[100vh] w-[100%] text-center bg-gainsboro">
       <h2 className="text-center pt-20 mb-20 text-blue font-extrabold text-6xl font-handlee">
         Articles
       </h2>

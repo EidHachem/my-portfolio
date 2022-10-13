@@ -11,18 +11,20 @@ import {
 import Socials from './Socials';
 
 const Home = () => {
-  const style = 'w-[50px] h-[50px] animate-pulse hover:animate-none';
+  const style = 'animate-pulse hover:animate-none';
 
   return (
-    <div className="h-[100vh] w-[100%] flex flex-col justify-center items-center gap-8 text-center bg-gainsboro">
+    <div
+      id="home"
+      className="h-[100vh] w-[100%] flex flex-col justify-center items-center gap-8 text-center bg-gainsboro px-7 lg:px-0">
       <img
         src="https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg"
         alt="Eid"
-        className="h-52 w-52 rounded-full"
+        className="h-40 w-40 rounded-full lg:h-52 lg:w-52"
       />
-      <h3 className="text-4xl font-medium">Hello I'm</h3>
-      <h1 className="text-7xl font-semibold font-handlee text-blue">Eid Hachem</h1>
-      <p className="max-w-screen-md">
+      <h3 className="text-2xl font-medium lg:text-4xl">Hello I'm</h3>
+      <h1 className="text-4xl font-semibold font-handlee text-blue lg:text-7xl">Eid Hachem</h1>
+      <p className="max-w-screen-md text-[14px] lg:text-base">
         Let me tell you few things about me...
         <br /> I'm a business school graduate, I found my passion into programming the first time I
         was introduced to Java in an elective university class, After a while I started
@@ -31,19 +33,19 @@ const Home = () => {
         ready to start a new career that's filled with passion and opportunities.
       </p>
       <Socials />
-      <div className="flex justify-center items-center gap-6">
-        <FaHtml5 className={`text-orange ${style}`} title="HTML" />
-        <FaCss3 className={`text-lightblue ${style}`} title="CSS" />
-        <FaJs className={`text-yellow ${style}`} title="JavaScript" />
-        <FaReact className={`text-lightblue ${style}`} title="React" />
-        <SiRedux className={`text-lightblue ${style}`} title="Redux" />
-        <SiRuby className={`text-red ${style}`} title="Ruby" />
-        <SiRubyonrails className={`text-red ${style}`} title="Rails" />
-        <SiPostgresql className={`text-lightblue ${style}`} title="Postgresql" />
-        <SiMysql className={`text-lightblue ${style}`} title="Mysql" />
-        <FaSass className={`text-red ${style}`} title="Sass" />
-        <FaBootstrap className={`text-purple ${style}`} title="Bootstrap" />
-        <SiTypescript className={`text-lightblue ${style}`} title="TypeScript" />
+      <div className="flex justify-center items-center gap-6 flex-wrap max-w-[20em] lg:max-w-full">
+        <FaHtml5 className={`text-orange w-[30px] h-[30px] ${style}`} title="HTML" />
+        <FaCss3 className={`text-lightblue w-[30px] h-[30px] ${style}`} title="CSS" />
+        <FaJs className={`text-yellow w-[30px] h-[30px] ${style}`} title="JavaScript" />
+        <FaReact className={`text-lightblue w-[30px] h-[30px] ${style}`} title="React" />
+        <SiRedux className={`text-lightblue w-[30px] h-[30px] ${style}`} title="Redux" />
+        <SiRuby className={`text-red w-[30px] h-[30px] ${style}`} title="Ruby" />
+        <SiRubyonrails className={`text-red w-[30px] h-[30px] ${style}`} title="Rails" />
+        <SiPostgresql className={`text-lightblue w-[30px] h-[30px] ${style}`} title="Postgresql" />
+        <SiMysql className={`text-lightblue w-[30px] h-[30px] ${style}`} title="Mysql" />
+        <FaSass className={`text-red w-[30px] h-[30px] ${style}`} title="Sass" />
+        <FaBootstrap className={`text-purple w-[30px] h-[30px] ${style}`} title="Bootstrap" />
+        <SiTypescript className={`text-lightblue w-[30px] h-[30px] ${style}`} title="TypeScript" />
       </div>
     </div>
   );

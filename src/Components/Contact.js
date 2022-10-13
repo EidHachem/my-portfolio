@@ -44,7 +44,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="bg-lightBlue h-[100vh] w-[100%]">
+    <div id="contact" className="bg-lightBlue h-[100vh] w-[100%]">
       <h2 className="text-center pt-20 mb-20 text-blue font-extrabold text-6xl font-handlee">
         Contact Me
       </h2>
