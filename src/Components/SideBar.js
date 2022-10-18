@@ -4,12 +4,18 @@ import Socials from './Socials';
 import FeaturedCarousel from '../Carousel/FeaturedCarousel';
 import { ProjectsContext } from '../App';
 import MenuTabs from './MenuTabs';
+import { motion } from 'framer-motion';
 
 const SideBar = () => {
   const projects = useContext(ProjectsContext);
   return (
     <div className="h-[100vh] w-[20%] flex-col justify-around items-center text-center font-roboto bg-blue text-beige fixed hidden md:flex z-30">
-      <img className="h-32 w-32 rounded-full hover:scale-150" src={logo} alt="logo"></img>
+      <motion.img
+        animate={{ rotate: 360 }}
+        transition={{ duration: 3 }}
+        className="h-32 w-32 rounded-full hover:scale-150"
+        src={logo}
+        alt="logo"></motion.img>
       <MenuTabs />
       <div>
         <p className="text-lg font-bold mb-4">Featured</p>
