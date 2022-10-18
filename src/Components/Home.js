@@ -8,6 +8,7 @@ import {
   SiRubyonrails,
   SiTypescript,
 } from 'react-icons/si';
+import me from '../Assets/me.jpg';
 import Socials from './Socials';
 
 const Home = () => {
@@ -16,12 +17,8 @@ const Home = () => {
   return (
     <div
       id="home"
-      className="min-h-[100vh] w-[100%] flex flex-col justify-center items-center gap-8 text-center bg-gainsboro px-7 lg:px-0 border-b-[1px] border-blue">
-      <img
-        src="https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg"
-        alt="Eid"
-        className="h-40 w-40 rounded-full lg:h-52 lg:w-52"
-      />
+      className="min-h-[100vh] w-[100%] flex flex-col justify-center items-center gap-8 text-center bg-gainsboro px-7 lg:px-0">
+      <img src={me} alt="Eid" className="h-40 w-40 rounded-full lg:h-52 lg:w-52" />
       <h3 className="text-2xl font-medium lg:text-4xl">Hello I'm</h3>
       <h1 className="text-4xl font-semibold font-handlee text-blue lg:text-7xl">Eid Hachem</h1>
       <p className="max-w-screen-md text-[14px] lg:text-base">
@@ -32,7 +29,7 @@ const Home = () => {
         in a pair programming way that they offered. Now I am a full-stack web developer who is
         ready to start a new career that's filled with passion and opportunities.
       </p>
-      <Socials blue="blue" lightBlue="lightblue" gray="gray" tweet="twitterBlue" />
+      <Socials blue="blue" lightBlue="lightblue" gray="gray" tweet="twitter" />
       <div className="flex justify-center items-center gap-6 flex-wrap max-w-[20em] lg:max-w-full">
         <FaHtml5
           className={`text-orange w-[30px] h-[30px] lg:w-[50px] lg:h-[50px] ${style}`}
