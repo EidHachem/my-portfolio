@@ -2,6 +2,7 @@ import React from 'react';
 import { createPortal } from 'react-dom';
 import classes from './projectModal.module.css';
 import Carousel from 'nuka-carousel/lib/carousel';
+import '../index.css';
 
 const ProjectModal = ({ data, close }) => {
   const { name, description, images, technologies, url, code, id } = data;
@@ -17,11 +18,11 @@ const ProjectModal = ({ data, close }) => {
         <h2 className="text-center font-handlee text-3xl lg:text-5xl font-bold text-purple">
           {name}
         </h2>
-        <div className="w-[90%] m-auto">
+        <div className="w-[90%] mx-auto">
           <Carousel
             wrapAround={true}
             autoplay={true}
-            className="h-[100%] m-auto rounded mt-5 border-2 border-purple bg-gray"
+            className="h-[100%] m-auto rounded border-2 border-blue bg-gray"
             pauseOnHover={true}
             swiping={true}
             withoutControls={false}
@@ -53,20 +54,20 @@ const ProjectModal = ({ data, close }) => {
               },
             }}>
             {images.map((imageUrl) => (
-              <img key={imageUrl} src={imageUrl} alt={name} className="w-max h-[25em] m-auto" />
+              <img
+                key={imageUrl}
+                src={imageUrl}
+                alt={name}
+                className="w-max h-[15em] m-auto lg:h-[22em]"
+              />
             ))}
           </Carousel>
         </div>
-        <p className="text-center mt-3">
-          {description}
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore provident laborum
-          aspernatur magni dignissimos qui facilis optio quisquam impedit dicta eius nulla quis cum
-          doloremque eum sunt iure, iste illum.
-        </p>
+        <p className="text-center mt-3 px-3">{description}</p>
         <div className="flex justify-center items-start gap-10 mt-5 mb-5">
           <div>
             <p className="text-center mb-3">Built with:</p>
-            <ul className="flex flex-wrap gap-2">
+            <ul className="flex flex-wrap gap-2 items-center justify-center">
               {technologies.map((tech) => (
                 <li
                   key={tech}
