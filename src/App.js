@@ -15,21 +15,19 @@ function App() {
   const projectsCollection = collection(db, 'projects');
   const [projects, setProjects] = useState();
   const [loader, setLoader] = useState(true);
+  console.log(projects);
+
+  const getUsers = async () => {
+    const data = await getDocs(query(projectsCollection, orderBy('createdAt', 'desc')));
+    let projects = [];
+    data.docs.forEach((doc) => {
+      projects.push({ ...doc.data(), id: doc.id });
+    });
+    setProjects(projects);
+  };
 
   useEffect(() => {
-    const getUsers = async () => {
-      const data = await getDocs(query(projectsCollection, orderBy('createdAt', 'desc')));
-      let projects = [];
-      data.docs.forEach((doc) => {
-        projects.push({ ...doc.data(), id: doc.id });
-      });
-      setProjects(projects);
-    };
-
     getUsers();
-  });
-
-  useEffect(() => {
     if (loader) {
       setTimeout(() => {
         setLoader(false);
