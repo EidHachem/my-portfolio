@@ -8,6 +8,8 @@ const Projects = () => {
   const [openModal, setOpenModal] = useState(false);
   const projects = useContext(ProjectsContext);
   const [pages, setPages] = useState(4);
+  const [hideSeeMore, setHideSeeMore] = useState(false);
+  const [showLess, setShowLess] = useState(false);
 
   if (!projects) {
     return (
@@ -23,23 +25,21 @@ const Projects = () => {
   }
 
   return (
-    <div
-      id="projects"
-      className="w-[100%] min-h-[100vh] bg-gainsboro py-5 px-5 lg:px-0 border-b-[1px] border-blue">
-      <h2 className="text-center pt-20 mb-20 text-purple font-extrabold text-4xl font-handlee lg:text-7xl">
+    <div id="projects" className="w-[100%] min-h-[100vh] bg-gainsboro py-2 px-5 lg:px-0 lg:py-5">
+      <h2 className="text-center pt-10 mb-10 text-purple font-extrabold text-4xl font-handlee lg:text-7xl lg:mb-20 lg:pt-0">
         Projects
       </h2>
-      <div className="flex flex-wrap justify-center items-center gap-y-10 gap-x-20 lg:gap-y-20">
+      <div className="flex flex-wrap justify-center items-center gap-y-10 gap-x-20 lg:gap-y-20 lg:gap-x-36">
         {projects &&
           projects.slice(0, pages).map((project) => (
             <div
               key={project.id}
-              className="max-w-md rounded overflow-hidden shadow-lg bg-opacity-40 border-spacing-6 border-blue border-2 bg-lightGray h-[31em]">
+              className="max-w-md rounded overflow-hidden shadow-lg bg-opacity-40 border-spacing-6 border-blue border-2 bg-lightGray h-[31em] lg:w-[40%]">
               <img src={project.images[0]} alt={project.name} className="w-max h-64" />
               <div className="p-3">
                 <h3 className="font-bold text-xl mb-2 text-center mt-2">{project.name}</h3>
                 <p className="text-gray-700 text-center mb-2">
-                  {project.description.substring(0, 20)}
+                  {project.description.substring(0, 60)}...
                 </p>
                 <p className="text-center mb-2 text-blue text-lg font-bold">Built with: </p>
                 <ul className="flex justify-center items-center gap-5">
@@ -74,13 +74,32 @@ const Projects = () => {
           />
         )}
       </div>
-      {projects.length < 4 && (
+      {projects.length > 4 && !hideSeeMore && (
         <div className="flex justify-center mt-4 lg:mt-24">
           <button
             type="button"
             className="bg-blue text-beige text-center p-2 rounded"
-            onClick={() => projects.length > 4 && setPages(projects.length)}>
-            See More
+            onClick={() => {
+              projects.length > 4 && setPages(projects.length);
+              setHideSeeMore(!hideSeeMore);
+              setShowLess(!showLess);
+            }}>
+            Show More
+          </button>
+        </div>
+      )}
+
+      {showLess && (
+        <div className="flex justify-center mt-4 lg:mt-24">
+          <button
+            type="button"
+            className="bg-blue text-beige text-center p-2 rounded"
+            onClick={() => {
+              setPages(4);
+              setShowLess(!showLess);
+              setHideSeeMore(!hideSeeMore);
+            }}>
+            Show Less
           </button>
         </div>
       )}
