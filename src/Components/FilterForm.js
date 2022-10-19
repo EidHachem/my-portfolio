@@ -12,7 +12,7 @@ const FilterForm = ({ filter, setFilter }) => {
       <label
         htmlFor="all"
         className={`text-blue font-bold text-xl flex radio py-2 w-[8em] justify-center items-center cursor-pointer border-r-2 ${
-          all && 'bg-blue text-beige'
+          all && 'text-orange bg-blue border-blue '
         }`}>
         <input
           type="radio"
@@ -21,7 +21,7 @@ const FilterForm = ({ filter, setFilter }) => {
           className="hidden"
           value={filter}
           onClick={() => {
-            setFilter('front-end' || 'full-stack');
+            setFilter('');
             setAll(true);
             setFrontEnd(false);
             setFullStack(false);
@@ -32,7 +32,7 @@ const FilterForm = ({ filter, setFilter }) => {
       <label
         htmlFor="front-end"
         className={`text-blue font-bold text-xl flex radio py-2 w-[8em] justify-center items-center cursor-pointer border-r-2 ${
-          frontEnd && 'bg-blue text-beige'
+          frontEnd && 'text-orange bg-blue border-blue'
         }`}>
         <input
           type="radio"
@@ -41,7 +41,7 @@ const FilterForm = ({ filter, setFilter }) => {
           className="hidden"
           value={filter}
           onClick={() => {
-            setFilter('front-end');
+            setFilter('full-stack');
             setFrontEnd(true);
             setAll(false);
             setFullStack(false);
@@ -52,7 +52,7 @@ const FilterForm = ({ filter, setFilter }) => {
       <label
         htmlFor="full-stack"
         className={`text-blue font-bold text-xl flex radio py-2 w-[8em] justify-center items-center cursor-pointer ${
-          fullStack && 'bg-blue text-beige'
+          fullStack && 'text-orange bg-blue'
         }`}>
         <input
           type="radio"
@@ -61,7 +61,7 @@ const FilterForm = ({ filter, setFilter }) => {
           className="hidden"
           value={filter}
           onClick={() => {
-            setFilter('full-stack');
+            setFilter('front-end');
             setFullStack(true);
             setAll(false);
             setFrontEnd(false);

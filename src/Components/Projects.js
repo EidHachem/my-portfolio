@@ -11,9 +11,9 @@ const Projects = () => {
   const [pages, setPages] = useState(4);
   const [hideSeeMore, setHideSeeMore] = useState(false);
   const [showLess, setShowLess] = useState(false);
-  const [filter, setFilter] = useState('front-end' || 'full-stack');
+  const [filter, setFilter] = useState();
 
-  const filteredProjects = projects.filter((project) => project.stackType === filter);
+  const filteredProjects = projects.filter((project) => project.stackType !== filter);
 
   if (!filteredProjects) {
     return (
