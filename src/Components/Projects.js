@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { ProjectsContext } from '../App';
 import ProjectModal from '../Modal/ProjectModal';
 import { InfinitySpin } from 'react-loader-spinner';
+import FilterForm from './FilterForm';
 
 const Projects = () => {
   const [project, setProject] = useState();
@@ -10,8 +11,11 @@ const Projects = () => {
   const [pages, setPages] = useState(4);
   const [hideSeeMore, setHideSeeMore] = useState(false);
   const [showLess, setShowLess] = useState(false);
+  const [filter, setFilter] = useState('front-end' || 'full-stack');
 
-  if (!projects) {
+  const filteredProjects = projects.filter((project) => project.stackType === filter);
+
+  if (!filteredProjects) {
     return (
       <div className="w-[100%] min-h-[100vh] bg-gainsboro py-5 px-5 lg:px-0">
         <h2 className="text-center pt-20 mb-20 text-purple font-extrabold text-4xl font-handlee lg:text-7xl">
@@ -24,14 +28,35 @@ const Projects = () => {
     );
   }
 
+  if (filteredProjects.length === 0) {
+    return (
+      <div className="w-[100%] min-h-[100vh] bg-gainsboro py-5 px-5 lg:px-0">
+        <h2 className="text-center pt-20 mb-20 text-purple font-extrabold text-4xl font-handlee lg:text-7xl">
+          Projects
+        </h2>
+        <div className="flex justify-center items-center">
+          <FilterForm filter={filter} setFilter={setFilter} />
+        </div>
+        <div className="flex justify-center items-center">
+          <h4 className="text-center text-blue font-extrabold text-2xl mt-20 lg:text-4xl">
+            No projects available at the moment.
+          </h4>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div id="projects" className="w-[100%] min-h-[100vh] bg-gainsboro py-2 px-5 lg:px-0 lg:py-5">
       <h2 className="text-center pt-10 mb-10 text-purple font-extrabold text-4xl font-handlee lg:text-7xl lg:mb-20 lg:pt-0">
         Projects
       </h2>
+      <div className="flex justify-center items-center">
+        <FilterForm filter={filter} setFilter={setFilter} />
+      </div>
       <div className="flex flex-wrap justify-center items-center gap-y-10 gap-x-20 lg:gap-y-20 lg:gap-x-36">
-        {projects &&
-          projects.slice(0, pages).map((project) => (
+        {filteredProjects &&
+          filteredProjects.slice(0, pages).map((project) => (
             <div
               key={project.id}
               className="max-w-md rounded overflow-hidden shadow-lg bg-opacity-40 border-spacing-6 border-blue border-2 bg-lightGray h-[31em] lg:w-[40%]">
@@ -74,13 +99,13 @@ const Projects = () => {
           />
         )}
       </div>
-      {projects.length > 4 && !hideSeeMore && (
+      {filteredProjects.length > 4 && !hideSeeMore && (
         <div className="flex justify-center mt-4 lg:mt-24">
           <button
             type="button"
             className="bg-blue text-beige text-center p-2 rounded"
             onClick={() => {
-              projects.length > 4 && setPages(projects.length);
+              filteredProjects.length > 4 && setPages(filteredProjects.length);
               setHideSeeMore(!hideSeeMore);
               setShowLess(!showLess);
             }}>
@@ -89,7 +114,7 @@ const Projects = () => {
         </div>
       )}
 
-      {showLess && (
+      {showLess && filteredProjects.length > 0 && (
         <div className="flex justify-center mt-4 lg:mt-24">
           <button
             type="button"
