@@ -7,6 +7,7 @@ const MobileMenu = () => {
   const openMenu = () => {
     setIsOpen(!isOpen);
     document.querySelector('#home').style.display = 'none';
+    document.querySelector('#about').style.display = 'none';
     document.querySelector('#projects').style.display = 'none';
     document.querySelector('#articles').style.display = 'none';
     document.querySelector('#contact').style.display = 'none';
@@ -16,6 +17,7 @@ const MobileMenu = () => {
   const closeMenu = () => {
     setIsOpen(!isOpen);
     document.querySelector('#home').style.display = 'flex';
+    document.querySelector('#about').style.display = 'flex';
     document.querySelector('#projects').style.display = 'block';
     document.querySelector('#articles').style.display = 'block';
     document.querySelector('#contact').style.display = 'block';

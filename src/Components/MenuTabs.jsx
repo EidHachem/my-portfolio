@@ -1,6 +1,6 @@
 import React from 'react';
 import { CgWebsite } from 'react-icons/cg';
-import { FaBookOpen, FaHome } from 'react-icons/fa';
+import { FaBookOpen, FaHome, FaInfoCircle } from 'react-icons/fa';
 import { TbMessageCircle } from 'react-icons/tb';
 
 const MenuTabs = ({ close }) => {
@@ -11,6 +11,12 @@ const MenuTabs = ({ close }) => {
           <div className="flex justify-center items-center gap-9">
             <FaHome />
             <p className="text-lg font-bold">Home</p>
+          </div>
+        </a>
+        <a href="#about" onClick={close}>
+          <div className="flex justify-center items-center gap-9">
+            <FaInfoCircle />
+            <p className="text-lg font-bold">About</p>
           </div>
         </a>
         <a href="#projects" onClick={close}>

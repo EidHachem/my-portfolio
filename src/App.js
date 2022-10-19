@@ -8,6 +8,7 @@ import Projects from './Components/Projects';
 import SideBar from './Components/SideBar';
 import { db } from './firebase/firebase.config';
 import { Bars } from 'react-loader-spinner';
+import About from './Components/About';
 
 export const ProjectsContext = createContext();
 
@@ -58,6 +59,7 @@ function App() {
         <div className="w-[100%] absolute lg:left-[20%] lg:w-[80%] z-20">
           <MobileMenu />
           <Home />
+          <About />
           <Projects />
           <Articles />
           <Contact />

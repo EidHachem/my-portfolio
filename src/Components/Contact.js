@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { send } from 'emailjs-com';
-import { FaFilePdf, FaFileWord } from 'react-icons/fa';
 import { HiOutlineRefresh } from 'react-icons/hi';
 import fetchQuotes from '../quotes/RandomQuote';
 
@@ -61,27 +60,6 @@ const Contact = () => {
       <h2 className="text-center pt-20 mb-10 text-blue font-extrabold text-4xl lg:text-7xl font-handlee">
         Contact Me
       </h2>
-      <h3 className="text-center mb-5 text-xl">My Resume</h3>
-      <div className="flex justify-center items-center gap-2">
-        <a
-          href={require('../Assets/My-Resume.docx')}
-          download="Eid-Hachem-Resume.docx"
-          className="bg-blue text-beige rounded p-1 flex justify-start items_center gap-2">
-          <span>Download word</span>{' '}
-          <span className="text-center m-auto">
-            <FaFileWord />
-          </span>
-        </a>
-        <a
-          href={require('../Assets/My-Resume.pdf')}
-          download="Eid-Hachem-Resume.pdf"
-          className="bg-blue text-beige rounded p-1 flex justify-start items_center gap-2">
-          <span>Download pdf</span>{' '}
-          <span className="text-center m-auto">
-            <FaFilePdf />
-          </span>
-        </a>
-      </div>
       <div className="pt-10">
         <form onSubmit={handleSubmit} className="flex flex-col gap-5 justify-start items-center">
           <input
@@ -112,7 +90,7 @@ const Contact = () => {
           </button>
         </form>
       </div>
-      <figure className="mx-auto max-w-screen-md text-center mt-6 border-2 border-blue p-1 w-[90%] rounded lg:w-1/2 bg-lightGray">
+      <figure className="mx-auto max-w-screen-md text-center mt-6 p-1 w-[90%] rounded lg:w-1/">
         <svg
           aria-hidden="true"
           className="mx-auto mb-3 w-8 h-8 text-orange"
