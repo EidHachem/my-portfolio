@@ -2,7 +2,7 @@ import React from 'react';
 
 const FilterForm = ({ filter, setFilter }) => {
   return (
-    <div class="main flex border rounded-full overflow-hidden m-4 select-none h-[3em] mb-16">
+    <div class="main hidden lg:flex border rounded-full overflow-hidden m-4 select-none h-[3em] mb-16">
       <div class="title w-[8em] flex justify-center items-center bg-blue text-beige font-semibold text-xl">
         Choose stack
       </div>

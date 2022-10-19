@@ -60,16 +60,18 @@ const Projects = () => {
             <div
               key={project.id}
               className="max-w-md rounded overflow-hidden shadow-lg bg-opacity-40 border-spacing-6 border-blue border-2 bg-lightGray h-[31em] lg:w-[40%]">
-              <img src={project.images[0]} alt={project.name} className="w-max h-64" />
+              <img src={project.images[0]} alt={project.name} className="w-max h-52 lg:h-64" />
               <div className="p-3">
                 <h3 className="font-bold text-xl mb-2 text-center mt-2">{project.name}</h3>
                 <p className="text-gray-700 text-center mb-2">
                   {project.description.substring(0, 60)}...
                 </p>
                 <p className="text-center mb-2 text-blue text-lg font-bold">Built with: </p>
-                <ul className="flex justify-center items-center gap-5">
+                <ul className="flex justify-center items-center gap-2 lg:gap-5">
                   {project.technologies.map((tech) => (
-                    <li key={tech} className="bg-orange rounded text-beige p-1 w-20 text-center">
+                    <li
+                      key={tech}
+                      className="bg-orange rounded text-beige p-1 w-20 text-center text-sm lg:text-base">
                       {tech}
                     </li>
                   ))}
@@ -77,7 +79,7 @@ const Projects = () => {
                 <div className="flex justify-center">
                   <button
                     type="button"
-                    className="bg-blue text-beige text-center p-2 rounded mb-3 mt-3"
+                    className="bg-blue text-beige text-center py-1 px-10 rounded mb-3 mt-3 lg:text-lg"
                     onClick={() => {
                       setOpenModal(true);
                       setProject(project);
