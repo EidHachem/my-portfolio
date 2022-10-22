@@ -15,7 +15,7 @@ const ProjectModal = ({ data, close }) => {
           className="bg-orange text-yellow fixed right-[-25px] top-0 p-1 px-5 rotate-45 rounded">
           <span className="font-bold text-beige">Close</span>
         </button>
-        <h2 className="text-center font-handlee text-3xl lg:text-5xl font-bold text-purple">
+        <h2 className="text-center text-xl font-handlee mb-1 md:text-3xl font-bold text-purple">
           {name}
         </h2>
         <div className="w-[90%] mx-auto">
@@ -58,13 +58,13 @@ const ProjectModal = ({ data, close }) => {
                 key={imageUrl}
                 src={imageUrl}
                 alt={name}
-                className="w-max h-[15em] m-auto lg:h-[22em]"
+                className="w-max h-[15em] m-auto xl:h-[20em]"
               />
             ))}
           </Carousel>
         </div>
-        <p className="text-center mt-3 px-3">{description}</p>
-        <div className="flex justify-center items-start gap-10 mt-5 mb-5">
+        <p className="text-center mt-3 px-3 text-sm lg:text-base">{description}</p>
+        <div className="flex justify-center items-start gap-10 mb-5 lg:mt-5">
           <div>
             <p className="text-center mb-3">Built with:</p>
             <ul className="flex flex-wrap gap-2 items-center justify-center">

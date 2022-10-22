@@ -15,8 +15,8 @@
   transform: translate(-50%, -50%);
   z-index: 101;
   background-color: #eae7dc;
-  width: 50vw;
-  height: 95vh;
+  width: 60vw;
+  height: fit-content;
   border-radius: 10px;
   padding: 3em;
   display: flex;
@@ -26,9 +26,8 @@
 @media screen and (max-width: 768px) {
   .modal {
     width: 90vw;
-    height: fit-content;
     padding: 0;
-    padding-top: 3.5em;
+    padding-top: 1.5em;
     gap: 1em;
   }
 }
@@ -36,6 +35,11 @@
 @media screen and (min-width: 1600px) {
   .modal {
     width: 40vw;
-    height: 80vh;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .modal {
+    width: 85vw;
   }
 }

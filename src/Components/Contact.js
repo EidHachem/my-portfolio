@@ -56,8 +56,10 @@ const Contact = () => {
   }, [refresh]);
 
   return (
-    <div id="contact" className="bg-gainsboro min-h-[100vh] w-[100%] px-5 py-2 lg:px-0">
-      <h2 className="text-center pt-20 mb-10 text-blue font-extrabold text-4xl lg:text-7xl font-handlee">
+    <div
+      id="contact"
+      className="bg-gainsboro min-h-[100vh] w-[100%] px-5 py-2 md:min-h-fit lg:px-0">
+      <h2 className="text-center pt-20 mb-10 text-purple font-extrabold text-4xl lg:text-7xl font-handlee">
         Contact Me
       </h2>
       <div className="pt-10">
@@ -104,9 +106,9 @@ const Contact = () => {
         </svg>
         <p className="font-bold text-xl">Quote:</p>
         <blockquote>
-          <p className="text-xl italic font-medium py-3 text-blue">{quote}</p>
+          <p className="italic font-medium py-3 text-blue lg:text-xl">{quote}</p>
         </blockquote>
-        <figcaption className="flex justify-center items-center mt-3 space-x-3">
+        <figcaption className="flex justify-center items-center space-x-3">
           <div className="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
             <cite className="pr-3 font-bold text-blue font-handlee">{author}</cite>
           </div>

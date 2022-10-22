@@ -9,7 +9,7 @@ import { motion } from 'framer-motion';
 const SideBar = () => {
   const projects = useContext(ProjectsContext);
   return (
-    <div className="h-[100vh] w-[20%] flex-col justify-around items-center text-center font-roboto bg-blue text-beige fixed hidden md:flex z-30">
+    <div className="h-[100vh] w-[20%] flex-col justify-around items-center text-center font-roboto bg-blue text-beige fixed hidden lg:flex z-30">
       <motion.img
         animate={{ rotate: 360 }}
         transition={{ duration: 3 }}
@@ -18,7 +18,7 @@ const SideBar = () => {
         alt="logo"></motion.img>
       <MenuTabs />
       <div>
-        <p className="text-lg font-bold mb-4">Featured</p>
+        <p className="text-lg font-bold mb-4 md:hidden xl:block">Featured</p>
         {!projects ? (
           <div role="status">
             <svg
@@ -44,7 +44,8 @@ const SideBar = () => {
       </div>
       <div>
         <p>
-          Copyright &copy;2022 All rights reserved <br /> made with &#10084; by Eid hachem
+          Copyright &copy;2022 All rights reserved <br /> made with{' '}
+          <span className="text-red">&#10084;</span> by Eid hachem
         </p>
       </div>
       <Socials />

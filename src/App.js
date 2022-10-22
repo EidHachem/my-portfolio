@@ -58,11 +58,13 @@ function App() {
         <SideBar />
         <div className="w-[100%] absolute lg:left-[20%] lg:w-[80%] z-20">
           <MobileMenu />
-          <Home />
-          <About />
-          <Projects />
-          <Articles />
-          <Contact />
+          <div id="wrapper">
+            <Home />
+            <About />
+            <Projects />
+            <Articles />
+            <Contact />
+          </div>
         </div>
       </div>
     </ProjectsContext.Provider>

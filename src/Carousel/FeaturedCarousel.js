@@ -33,19 +33,21 @@ const FeaturedCarousel = () => {
         pauseOnHover={true}
         swiping={false}
         withoutControls={true}
-        className="cursor-pointer">
+        className="cursor-pointer md:hidden xl:block">
         {featuredProjects.map((project) => (
-          <img
-            key={project.id}
-            src={project.images[0]}
-            alt={project.name}
-            className="w-max h-40 m-auto rounded"
-            onClick={() => {
-              setOpenModal(true);
-              project && setProject(project);
-              document.body.style.overflow = 'hidden';
-            }}
-          />
+          <div key={project.id}>
+            <img
+              src={project.images[0]}
+              alt={project.name}
+              className="w-max h-40 m-auto rounded"
+              onClick={() => {
+                setOpenModal(true);
+                project && setProject(project);
+                document.body.style.overflow = 'hidden';
+              }}
+            />
+            <p className="text-center">{project.name}</p>
+          </div>
         ))}
       </Carousel>
       {openModal && (

@@ -16,7 +16,7 @@ import { FcDeployment } from 'react-icons/fc';
 
 const AccordionSection = () => {
   return (
-    <Accordion className="w-[95%] lg:w-[60%] lg:mt-20" preExpanded={['a']}>
+    <Accordion className="w-[95%] lg:w-[60%] lg:mt-10" preExpanded={['a']}>
       <AccordionItem uuid="a">
         <AccordionItemHeading>
           <AccordionItemButton className="bg-blue text-beige relative text-sm py-3 lg:text-lg">
@@ -110,7 +110,7 @@ const AccordionSection = () => {
           </AccordionItemButton>
         </AccordionItemHeading>
         <AccordionItemPanel className="bg-lightBlue text-blue py-5">
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-2 gap-3 text-start pl-8 lg:pl-56">
             <p className="text-xs lg:text-lg font-bold">Problem solving</p>
             <p className="text-xs lg:text-lg font-bold">Communication</p>
             <p className="text-xs lg:text-lg font-bold">Self-learning</p>
