@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Carousel from 'nuka-carousel/lib/carousel';
 import { ProjectsContext } from '../App';
 import ProjectModal from '../Modal/ProjectModal';
@@ -7,7 +7,6 @@ import { motion } from 'framer-motion';
 
 const FeaturedCarousel = () => {
   const projects = useContext(ProjectsContext);
-  console.log(projects);
   const [openModal, setOpenModal] = useState(false);
   const [project, setProject] = useState();
   const featuredProjects = projects.filter((project) => project.featured === 'true');

@@ -12,7 +12,7 @@ const FilterForm = ({ filter, setFilter }) => {
       <label
         htmlFor="all"
         className={`text-blue font-bold text-xl flex radio py-2 w-[8em] justify-center items-center cursor-pointer border-r-2 ${
-          all && 'text-orange bg-blue border-blue '
+          all && 'text-yellow bg-blue border-blue '
         }`}>
         <input
           type="radio"
@@ -32,7 +32,7 @@ const FilterForm = ({ filter, setFilter }) => {
       <label
         htmlFor="front-end"
         className={`text-blue font-bold text-xl flex radio py-2 w-[8em] justify-center items-center cursor-pointer border-r-2 ${
-          frontEnd && 'text-orange bg-blue border-blue'
+          frontEnd && 'text-yellow bg-blue border-blue'
         }`}>
         <input
           type="radio"
@@ -52,7 +52,7 @@ const FilterForm = ({ filter, setFilter }) => {
       <label
         htmlFor="full-stack"
         className={`text-blue font-bold text-xl flex radio py-2 w-[8em] justify-center items-center cursor-pointer ${
-          fullStack && 'text-orange bg-blue'
+          fullStack && 'text-yellow bg-blue'
         }`}>
         <input
           type="radio"

@@ -16,16 +16,16 @@ const MenuTabs = ({ close }) => {
             <p className="text-lg font-bold">Home</p>
           </div>
         </a>
-        <a href="#about" onClick={action}>
-          <div className="flex justify-center items-center gap-9">
-            <FaInfoCircle />
-            <p className="text-lg font-bold">About</p>
-          </div>
-        </a>
         <a href="#projects" onClick={action}>
           <div className="flex justify-center items-center gap-9">
             <CgWebsite />
             <p className="text-lg font-bold">Projects</p>
+          </div>
+        </a>
+        <a href="#about" onClick={action}>
+          <div className="flex justify-center items-center gap-9">
+            <FaInfoCircle />
+            <p className="text-lg font-bold">About</p>
           </div>
         </a>
         <a href="#articles" onClick={action}>

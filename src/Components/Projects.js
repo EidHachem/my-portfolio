@@ -1,8 +1,26 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { ProjectsContext } from '../App';
 import ProjectModal from '../Modal/ProjectModal';
 import { InfinitySpin } from 'react-loader-spinner';
 import FilterForm from './FilterForm';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+
+const prejectVariants = {
+  hidden: {
+    opacity: 0,
+    y: 100,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      type: 'spring',
+      stiffness: 180,
+    },
+  },
+};
 
 const Projects = () => {
   const [project, setProject] = useState();
@@ -12,6 +30,18 @@ const Projects = () => {
   const [hideSeeMore, setHideSeeMore] = useState(false);
   const [showLess, setShowLess] = useState(false);
   const [filter, setFilter] = useState();
+
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible');
+    }
+    if (!inView) {
+      controls.start('hidden');
+    }
+  }, [controls, inView]);
 
   const filteredProjects = projects.filter((project) => project.stackType !== filter);
 
@@ -49,14 +79,19 @@ const Projects = () => {
   return (
     <div
       id="projects"
-      className="w-[100%] min-h-[100vh] bg-gainsboro py-2 px-5 md:min-h-fit md:pt-28 lg:px-0 lg:py-5">
-      <h2 className="text-center pt-10 mb-10 text-purple font-extrabold text-4xl font-handlee lg:text-7xl lg:mb-20 lg:pt-0">
+      className="w-[100%] min-h-[100vh] bg-gainsboro py-2 px-5 md:min-h-fit md:pt-28 lg:px-0 xl:py-5 xl:pt-20">
+      <h2 className="text-center pt-10 mb-10 text-purple font-extrabold text-4xl font-handlee lg:text-5xl lg:mb-20 lg:pt-0">
         Projects
       </h2>
       <div className="flex justify-center items-center">
         <FilterForm filter={filter} setFilter={setFilter} />
       </div>
-      <div className="flex flex-wrap justify-center items-center gap-y-10 gap-x-20 xl:gap-y-20 xl:gap-x-36">
+      <motion.div
+        ref={ref}
+        initial="hidden"
+        animate={controls}
+        variants={prejectVariants}
+        className="flex flex-wrap justify-center items-center gap-y-10 gap-x-20 xl:gap-y-20 xl:gap-x-36">
         {filteredProjects &&
           filteredProjects.slice(0, pages).map((project) => (
             <div
@@ -100,7 +135,7 @@ const Projects = () => {
             }}
           />
         )}
-      </div>
+      </motion.div>
       {filteredProjects.length > 4 && !hideSeeMore && (
         <div className="flex justify-center mt-4 lg:mt-24">
           <button

@@ -9,8 +9,8 @@ const Articles = () => {
   return (
     <div
       id="articles"
-      className="min-h-[100vh] w-[100%] py-2 px-5 text-center bg-gainsboro md:min-h-fit md:pt-28 lg:px-0 lg:py-5">
-      <h2 className="text-center pt-10 mb-10 text-purple font-extrabold text-4xl font-handlee lg:text-7xl lg:pt-20 lg:mb-20">
+      className="min-h-[100vh] w-[100%] py-2 px-5 text-center bg-gainsboro md:min-h-fit md:pt-28 lg:px-0 lg:py-5 xl:min-h-[100vh] xl:py-0">
+      <h2 className="text-center pt-10 mb-10 text-purple font-extrabold text-4xl font-handlee lg:text-5xl lg:pt-20 lg:mb-20">
         Articles
       </h2>
       <div className="flex flex-wrap justify-center items-center gap-y-20 gap-x-20">

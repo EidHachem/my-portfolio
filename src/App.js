@@ -16,9 +16,8 @@ function App() {
   const projectsCollection = collection(db, 'projects');
   const [projects, setProjects] = useState();
   const [loader, setLoader] = useState(true);
-  console.log(projects);
 
-  const getUsers = async () => {
+  const getProjects = async () => {
     const data = await getDocs(query(projectsCollection, orderBy('createdAt', 'desc')));
     let projects = [];
     data.docs.forEach((doc) => {
@@ -28,11 +27,11 @@ function App() {
   };
 
   useEffect(() => {
-    getUsers();
+    getProjects();
     if (loader) {
       setTimeout(() => {
         setLoader(false);
-      }, 2000);
+      }, 2500);
     }
   }, [loader]);
 
@@ -56,12 +55,12 @@ function App() {
     <ProjectsContext.Provider value={projects}>
       <div className="flex font-nunito z-20">
         <SideBar />
-        <div className="w-[100%] absolute lg:left-[20%] lg:w-[80%] z-20">
+        <div className="w-[100%] absolute xl:left-[20%] xl:w-[80%] z-20">
           <MobileMenu />
           <div id="wrapper">
             <Home />
-            <About />
             <Projects />
+            <About />
             <Articles />
             <Contact />
           </div>

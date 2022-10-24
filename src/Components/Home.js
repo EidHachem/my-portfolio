@@ -1,14 +1,5 @@
 import React from 'react';
-import {
-  FaBootstrap,
-  FaCss3,
-  FaFilePdf,
-  FaFileWord,
-  FaHtml5,
-  FaJs,
-  FaReact,
-  FaSass,
-} from 'react-icons/fa';
+import { FaBootstrap, FaCss3, FaFilePdf, FaHtml5, FaJs, FaReact, FaSass } from 'react-icons/fa';
 import {
   SiMysql,
   SiPostgresql,
@@ -18,6 +9,7 @@ import {
   SiTypescript,
 } from 'react-icons/si';
 import me from '../Assets/me.jpg';
+import { motion } from 'framer-motion';
 
 const Home = () => {
   const style = 'animate-pulse hover:animate-none';
@@ -25,7 +17,7 @@ const Home = () => {
   return (
     <div
       id="home"
-      className="min-h-[100vh] w-[100%] flex flex-col justify-center items-center gap-8 text-center bg-gainsboro px-7 md:min-h-fit md:pt-28 lg:px-0">
+      className="min-h-[100vh] w-[100%] flex flex-col justify-center items-center gap-8 text-center bg-gainsboro px-7 md:min-h-fit xl:min-h-[100vh] md:pt-28 lg:px-0">
       <img src={me} alt="Eid" className="h-32 w-32 rounded-full lg:h-52 lg:w-52" />
       <h3 className="text-2xl font-medium lg:text-4xl">Hello I'm</h3>
       <h1 className="text-4xl font-semibold font-handlee text-purple mt-[-0.7em] mb-[-0.7em] md:mt-[-0.1em] lg:text-7xl lg:mt-0 lg:mb-0">
@@ -39,7 +31,11 @@ const Home = () => {
         mentoring new Bootcamp students at Microverse to achieve concrete goals on expected
         deadlines.
       </p>
-      <div className="flex flex-col justify-center items-center gap-3 mb-2 lg:flex-row lg:mb-5 lg:mt-5">
+      <motion.div
+        initial={{ y: 100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 1, delay: 0.5 }}
+        className="flex flex-col justify-center items-center gap-3 mb-2 lg:flex-row lg:mb-5 lg:mt-5">
         <p className="text-center text-lg font-bold m-0 lg:text-2xl">Resume: </p>
         <a
           href={require('../Assets/My-Resume.pdf')}
@@ -50,7 +46,7 @@ const Home = () => {
             <FaFilePdf />
           </span>
         </a>
-      </div>
+      </motion.div>
       <div className="flex justify-center items-center gap-6 flex-wrap max-w-[20em] md:max-w-lg lg:max-w-full lg:mt-8">
         <FaHtml5
           className={`text-orange w-[30px] h-[30px] md:w-[50px] md:h-[50px] ${style}`}

@@ -9,7 +9,7 @@ import { motion } from 'framer-motion';
 const SideBar = () => {
   const projects = useContext(ProjectsContext);
   return (
-    <div className="h-[100vh] w-[20%] flex-col justify-around items-center text-center font-roboto bg-blue text-beige fixed hidden lg:flex z-30">
+    <div className="h-[100vh] w-[20%] flex-col justify-around items-center text-center font-roboto bg-blue text-beige fixed hidden xl:flex z-30">
       <motion.img
         animate={{ rotate: 360 }}
         transition={{ duration: 3 }}
@@ -48,7 +48,9 @@ const SideBar = () => {
           <span className="text-red">&#10084;</span> by Eid hachem
         </p>
       </div>
-      <Socials />
+      <motion.div animate={{ rotateX: 360 }} transition={{ duration: 3 }}>
+        <Socials />
+      </motion.div>
     </div>
   );
 };

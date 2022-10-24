@@ -16,10 +16,10 @@ const MobileMenu = () => {
   };
 
   return (
-    <div className="sticky top-0 lg:hidden z-40">
+    <div className="sticky top-0 xl:hidden z-40">
       <div className="w-[150px] h-[150px] z-50 bg-orange border rounded-full fixed top-[-70px] left-[-70px] border-none opacity-90">
         <FaBars
-          className="fixed top-4 left-4 w-[30px] h-[30px] cursor-pointer text-[#fff]"
+          className="fixed top-4 left-4 w-[30px] h-[30px] cursor-pointer text-beige"
           onClick={openMenu}
         />
       </div>

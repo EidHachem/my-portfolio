@@ -10,12 +10,12 @@ const MobileTabs = ({ close, closeMenu }) => {
     <div className="h-[100vh]">
       <div className="w-[150px] h-[150px] z-50 bg-orange border rounded-full fixed top-[-70px] left-[-70px] border-none opacity-90">
         <FaTimes
-          className="fixed top-4 left-4 w-[35px] h-[35px] cursor-pointer text-[#fff] z-50"
+          className="fixed top-4 left-4 w-[35px] h-[35px] cursor-pointer text-beige z-50"
           onClick={closeMenu}
         />
       </div>
       <div className="fixed bg-blue w-[100vw] h-[100vh] z-40">
-        <div className="flex flex-col justify-center items-center gap-20 mt-[25%] text-beige">
+        <div className="flex flex-col justify-center items-center gap-20 mt-[25%] lg:mt-[10%] text-beige">
           <motion.img
             animate={{ rotate: 360 }}
             transition={{ duration: 3 }}

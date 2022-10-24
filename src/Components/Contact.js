@@ -1,7 +1,36 @@
 import React, { useEffect, useState } from 'react';
 import { send } from 'emailjs-com';
-import { HiOutlineRefresh } from 'react-icons/hi';
 import fetchQuotes from '../quotes/RandomQuote';
+import Swal from 'sweetalert2';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+
+const buttonVariants = {
+  hidden: {
+    opacity: 0,
+    y: 100,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      delay: 0.5,
+      type: 'spring',
+      stiffness: 150,
+    },
+  },
+  hover: {
+    scale: 0.9,
+    transition: {
+      duration: 0.3,
+      yoyo: Infinity,
+    },
+  },
+  tap: {
+    scale: 0.9,
+  },
+};
 
 const Contact = () => {
   const [senderName, setSenderName] = useState('');
@@ -9,7 +38,18 @@ const Contact = () => {
   const [message, setMessage] = useState('');
   const [quote, setQuote] = useState('');
   const [author, setAuthor] = useState('');
-  const [refresh, setRefresh] = useState(false);
+
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible');
+    }
+    if (!inView) {
+      controls.start('hidden');
+    }
+  }, [controls, inView]);
 
   const handleName = (e) => {
     setSenderName(e.target.value);
@@ -21,30 +61,82 @@ const Contact = () => {
     setMessage(e.target.value);
   };
 
+  function isEmail(emailAdress) {
+    let regex = /[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,8}(.[a-z{2,8}])?/g;
+
+    if (emailAdress.match(regex)) return true;
+    else return false;
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (senderName && senderEmail && message) {
+    if (senderName && senderEmail && message && isEmail(senderEmail)) {
       send(
         process.env.REACT_APP_EMAILJS_SERVICE_ID,
         process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
         { senderName, senderEmail, message },
         process.env.REACT_APP_EMAILJS_USER_ID,
-      )
-        .then((response) => {
-          console.log('SUCCESS!', response.status, response.text);
-        })
-        .catch((err) => {
-          console.log('FAILED...', err);
-        });
+      ).catch((err) => {
+        throw new Error(err);
+      });
+      Swal.fire({
+        title: 'Message Sent!',
+        html: `<p>Thank you for your message. I will get back to you as soon as possible</p><br />
+        <p>Meanwhile I will leave you with one of my favorite programming quotes: </p><p style= "font-style: italic; font-weight: 500;">${quote}</p><p style="font-weight: bold;">-${author}</p>`,
+        icon: 'success',
+        confirmButtonText: 'OK',
+      });
       setSenderName('');
       setSenderEmail('');
       setMessage('');
     } else if (!senderName) {
-      alert('Please enter your name');
+      Swal.fire({
+        title: 'Please enter your name',
+        showClass: {
+          popup: 'animate__animated animate__fadeInDown',
+        },
+        hideClass: {
+          popup: 'animate__animated animate__fadeOutUp',
+        },
+        confirmButtonText: 'OK',
+        confirmButtonColor: '#003049',
+      });
     } else if (!senderEmail) {
-      alert('Please enter your email');
+      Swal.fire({
+        title: 'Please enter your email',
+        showClass: {
+          popup: 'animate__animated animate__fadeInDown',
+        },
+        hideClass: {
+          popup: 'animate__animated animate__fadeOutUp',
+        },
+        confirmButtonText: 'OK',
+        confirmButtonColor: '#003049',
+      });
+    } else if (!isEmail(senderEmail)) {
+      Swal.fire({
+        title: 'Please enter a valid email',
+        showClass: {
+          popup: 'animate__animated animate__fadeInDown',
+        },
+        hideClass: {
+          popup: 'animate__animated animate__fadeOutUp',
+        },
+        confirmButtonText: 'OK',
+        confirmButtonColor: '#003049',
+      });
     } else if (!message) {
-      alert('Please enter a message');
+      Swal.fire({
+        title: 'Please enter a message',
+        showClass: {
+          popup: 'animate__animated animate__fadeInDown',
+        },
+        hideClass: {
+          popup: 'animate__animated animate__fadeOutUp',
+        },
+        confirmButtonText: 'OK',
+        confirmButtonColor: '#003049',
+      });
     }
   };
 
@@ -53,16 +145,35 @@ const Contact = () => {
       setQuote(data.en);
       setAuthor(data.author);
     });
-  }, [refresh]);
+  }, []);
 
   return (
     <div
       id="contact"
       className="bg-gainsboro min-h-[100vh] w-[100%] px-5 py-2 md:min-h-fit lg:px-0">
-      <h2 className="text-center pt-20 mb-10 text-purple font-extrabold text-4xl lg:text-7xl font-handlee">
+      <h2 className="text-center pt-20 mb-10 text-purple font-extrabold text-4xl lg:text-5xl font-handlee">
         Contact Me
       </h2>
-      <div className="pt-10">
+      <div className="flex flex-col items-center justify-center">
+        <p className="text-center xl:text-xl font-bold text-blue mb-5 xl:max-w-[50%]">
+          I'm always open to new opportunities and challenges. If you have any questions or want to
+          work together, feel free to contact me by using the form below.
+        </p>
+        <p className="text-center xl:text-xl font-bold text-blue mb-5 xl:max-w-[50%]">
+          If you want direct contact, you can also reach me via{' '}
+          <a href="tel:+961 78 818 531" className="text-orange">
+            {' '}
+            mobile
+          </a>{' '}
+          or by sending me an{' '}
+          <a href="mailto:eidhachem1@gmail.com" className="text-orange">
+            {' '}
+            email
+          </a>{' '}
+          .
+        </p>
+      </div>
+      <div className="pt-10 pb-24">
         <form onSubmit={handleSubmit} className="flex flex-col gap-5 justify-start items-center">
           <input
             type="text"
@@ -87,41 +198,19 @@ const Contact = () => {
             placeholder="Message*"
             className="w-[90%] lg:w-1/2 h-40 rounded-md border-2 border-blue resize-none p-4 accent-blue bg-lightGray"
           />
-          <button type="submit" className="bg-blue p-2 px-4 rounded text-beige">
+          <motion.button
+            ref={ref}
+            variants={buttonVariants}
+            initial="hidden"
+            animate={controls}
+            whileHover="hover"
+            whileTap="tap"
+            type="submit"
+            className="bg-blue p-2 px-4 xl:px-10 xl:text-xl rounded text-beige">
             Send
-          </button>
+          </motion.button>
         </form>
       </div>
-      <figure className="mx-auto max-w-screen-md text-center mt-6 p-1 w-[90%] rounded lg:w-1/">
-        <svg
-          aria-hidden="true"
-          className="mx-auto mb-3 w-8 h-8 text-orange"
-          viewBox="0 0 24 27"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"
-            fill="currentColor"
-          />
-        </svg>
-        <p className="font-bold text-xl">Quote:</p>
-        <blockquote>
-          <p className="italic font-medium py-3 text-blue lg:text-xl">{quote}</p>
-        </blockquote>
-        <figcaption className="flex justify-center items-center space-x-3">
-          <div className="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-            <cite className="pr-3 font-bold text-blue font-handlee">{author}</cite>
-          </div>
-        </figcaption>
-        <button
-          className="flex justify-center items-center bg-blue p-1 my-2 text-beige rounded m-auto"
-          onClick={() => setRefresh(!refresh)}>
-          <span>
-            <HiOutlineRefresh />
-          </span>
-          <span>refresh</span>
-        </button>
-      </figure>
     </div>
   );
 };
