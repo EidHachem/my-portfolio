@@ -38,9 +38,6 @@ const Projects = () => {
     if (inView) {
       controls.start('visible');
     }
-    if (!inView) {
-      controls.start('hidden');
-    }
   }, [controls, inView]);
 
   const filteredProjects = projects.filter((project) => project.stackType !== filter);
@@ -97,7 +94,12 @@ const Projects = () => {
             <div
               key={project.id}
               className="max-w-md rounded overflow-hidden shadow-lg bg-opacity-40 border-spacing-6 border-blue border-2 bg-lightGray h-[31em] md:w-[50%] xl:w-[40%]">
-              <img src={project.images[0]} alt={project.name} className="w-max h-52 lg:h-64" />
+              <img
+                src={project.images[0]}
+                alt={project.name}
+                loading="lazy"
+                className="w-max h-52 lg:h-64"
+              />
               <div className="p-3">
                 <h3 className="font-bold text-xl mb-2 text-center mt-2">{project.name}</h3>
                 <p className="text-center mb-2">{project.description.substring(0, 49)}...</p>

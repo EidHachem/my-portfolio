@@ -19,6 +19,7 @@ const MobileTabs = ({ close, closeMenu }) => {
           <motion.img
             animate={{ rotate: 360 }}
             transition={{ duration: 3 }}
+            loading="lazy"
             className="h-32 w-32 rounded-full hover:scale-150"
             src={logo}
             alt="logo"></motion.img>

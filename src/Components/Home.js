@@ -18,7 +18,7 @@ const Home = () => {
     <div
       id="home"
       className="min-h-[100vh] w-[100%] flex flex-col justify-center items-center gap-8 text-center bg-gainsboro px-7 md:min-h-fit xl:min-h-[100vh] md:pt-28 lg:px-0">
-      <img src={me} alt="Eid" className="h-32 w-32 rounded-full lg:h-52 lg:w-52" />
+      <img src={me} alt="Eid" loading="lazy" className="h-32 w-32 rounded-full lg:h-52 lg:w-52" />
       <h3 className="text-2xl font-medium lg:text-4xl">Hello I'm</h3>
       <h1 className="text-4xl font-semibold font-handlee text-purple mt-[-0.7em] mb-[-0.7em] md:mt-[-0.1em] lg:text-7xl lg:mt-0 lg:mb-0">
         Eid Hachem

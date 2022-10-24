@@ -13,9 +13,11 @@ const SideBar = () => {
       <motion.img
         animate={{ rotate: 360 }}
         transition={{ duration: 3 }}
+        loading="lazy"
         className="h-32 w-32 rounded-full hover:scale-150"
         src={logo}
-        alt="logo"></motion.img>
+        alt="logo"
+      />
       <MenuTabs />
       <div>
         <p className="text-lg font-bold mb-4 md:hidden xl:block">Featured</p>

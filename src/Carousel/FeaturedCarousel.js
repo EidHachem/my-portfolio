@@ -38,6 +38,7 @@ const FeaturedCarousel = () => {
             <img
               src={project.images[0]}
               alt={project.name}
+              loading="lazy"
               className="w-max h-40 m-auto rounded"
               onClick={() => {
                 setOpenModal(true);
