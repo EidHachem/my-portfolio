@@ -15,7 +15,7 @@ const MobileTabs = ({ close, closeMenu }) => {
         />
       </div>
       <div className="fixed bg-blue w-[100vw] h-[100vh] z-40">
-        <div className="flex flex-col justify-center items-center gap-20 mt-[25%] lg:mt-[10%] text-beige">
+        <div className="flex flex-col justify-center items-center gap-14 mt-[25%] lg:mt-[10%] text-beige">
           <motion.img
             animate={{ rotate: 360 }}
             transition={{ duration: 3 }}
