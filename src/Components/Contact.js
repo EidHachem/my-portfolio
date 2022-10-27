@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { send } from 'emailjs-com';
 import fetchQuotes from '../quotes/RandomQuote';
 import Swal from 'sweetalert2';
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import { motion } from 'framer-motion';
 
 const buttonVariants = {
   hidden: {
@@ -23,8 +22,8 @@ const buttonVariants = {
   hover: {
     scale: 0.9,
     transition: {
-      duration: 0.3,
-      yoyo: Infinity,
+      duration: 0.4,
+      repeat: Infinity,
     },
   },
   tap: {
@@ -38,18 +37,6 @@ const Contact = () => {
   const [message, setMessage] = useState('');
   const [quote, setQuote] = useState('');
   const [author, setAuthor] = useState('');
-
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
-
-  useEffect(() => {
-    if (inView) {
-      controls.start('visible');
-    }
-    if (!inView) {
-      controls.start('hidden');
-    }
-  }, [controls, inView]);
 
   const handleName = (e) => {
     setSenderName(e.target.value);
@@ -70,7 +57,7 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (senderName && senderEmail && message && isEmail(senderEmail)) {
+    if (senderName.trim() && senderEmail.trim() && message.trim() && isEmail(senderEmail)) {
       send(
         process.env.REACT_APP_EMAILJS_SERVICE_ID,
         process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
@@ -198,17 +185,18 @@ const Contact = () => {
             placeholder="Message*"
             className="w-[90%] lg:w-1/2 h-40 rounded-md border-2 border-blue resize-none p-4 accent-blue bg-lightGray"
           />
-          <motion.button
-            ref={ref}
-            variants={buttonVariants}
-            initial="hidden"
-            animate={controls}
-            whileHover="hover"
-            whileTap="tap"
-            type="submit"
-            className="bg-blue p-2 px-4 xl:px-10 xl:text-xl rounded text-beige">
-            Send
-          </motion.button>
+          {senderName.trim() && senderEmail.trim() && message.trim() ? (
+            <motion.button
+              variants={buttonVariants}
+              initial="hidden"
+              animate="visible"
+              whileHover="hover"
+              whileTap="tap"
+              type="submit"
+              className="bg-blue p-2 px-4 xl:px-10 xl:text-xl rounded text-beige">
+              Send
+            </motion.button>
+          ) : null}
         </form>
       </div>
     </div>
